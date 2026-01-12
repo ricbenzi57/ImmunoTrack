@@ -1,0 +1,7 @@
+{
+  "name": "Copy of ImmunoTrack v2.5.0",
+  "description": "Sistema gestionale medico per immunologia con sincronizzazione cloud e analisi AI.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
