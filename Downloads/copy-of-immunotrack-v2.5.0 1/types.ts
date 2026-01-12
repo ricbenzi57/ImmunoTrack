@@ -107,7 +107,6 @@ export interface AppSettings {
   clinicDetails: any;
 }
 
-// Added missing interfaces for Gemini service
 export interface Attachment {
   mimeType: string;
   base64: string;
@@ -123,20 +122,54 @@ export const TITLES = ["Sig.", "Sig.ra", "Dott.", "Dott.ssa", "Prof.", "Prof.ssa
 export const VISIT_TYPES = ["Prima Visita", "Verifica Terapia", "Controllo", "Urgenza", "Altro..."];
 export interface TherapyEntry { drug: string; posology: string; duration: string; }
 
-// Added missing initial data constants
 export const PREDEFINED_DIAGNOSES = [
-  "Immunodeficienza Comune Variabile (CVID)",
-  "Deficit Selettivo di IgA",
+  "Artrite reumatoide",
+  "Lupus eritematoso sistemico",
+  "Tiroidite di Hashimoto",
+  "Diabete mellito di tipo 1",
+  "Sclerosi multipla",
+  "Malattia di Graves",
+  "Immunodeficienza comune variabile (CVID)",
+  "Deficit selettivo di IgA",
+  "Agammaglobulinemia di Bruton",
+  "Immunodeficienza combinata grave (SCID)",
+  "Iper-IgM sindrome",
   "Sindrome di DiGeorge",
-  "Agammaglobulinemia legata all'X (XLA)",
-  "Ipogammaglobulinemia",
+  "Rinite allergica",
+  "Asma allergica",
+  "Orticaria cronica",
+  "Dermatite atopica",
+  "Anafilassi",
+  "Allergie alimentari",
+  "Sindrome autoimmune linfoproliferativa (ALPS)",
+  "Linfoproliferazione in CVID",
+  "Mieloma multiplo",
+  "Macroglobulinemia di Waldenstrom",
+  "Malattia da deposizione catene leggere",
+  "Linfomi in immunodeficienze",
   "Altro..."
 ];
 
 export const INITIAL_DRUGS: Drug[] = [
-  { id: '1', name: 'Privigen 10%', defaultPosology: '0.4g/kg ogni 21gg', defaultDuration: 'Cronica' },
-  { id: '2', name: 'Hizentra 20%', defaultPosology: '0.1g/kg ogni settimana', defaultDuration: 'Cronica' },
-  { id: '3', name: 'Cuvatru 15%', defaultPosology: '0.2g/kg ogni 14gg', defaultDuration: 'Cronica' }
+  { id: '1', name: "Metotrexato", defaultPosology: "15mg/settimana", defaultDuration: "continuativa" },
+  { id: '2', name: "Idrossiclorochina", defaultPosology: "200mg x 2/die", defaultDuration: "continuativa" },
+  { id: '3', name: "Levotiroxina", defaultPosology: "100mcg/die", defaultDuration: "continuativa" },
+  { id: '4', name: "Insulina", defaultPosology: "secondo schema", defaultDuration: "continuativa" },
+  { id: '5', name: "Rituximab", defaultPosology: "1g EV (ciclo)", defaultDuration: "6 mesi" },
+  { id: '6', name: "Ocrelizumab", defaultPosology: "300mg/600mg EV", defaultDuration: "6 mesi" },
+  { id: '7', name: "Metimazolo", defaultPosology: "5mg x 2/die", defaultDuration: "3 mesi" },
+  { id: '8', name: "Immunoglobuline EV", defaultPosology: "0.4g/kg/mese", defaultDuration: "ciclica" },
+  { id: '9', name: "Fexofenadina", defaultPosology: "120mg/die", defaultDuration: "30 giorni" },
+  { id: '10', name: "Mometasone spray", defaultPosology: "2 spruzzi/narice/die", defaultDuration: "30 giorni" },
+  { id: '11', name: "Budesonide", defaultPosology: "400mcg x 2/die", defaultDuration: "continuativa" },
+  { id: '12', name: "Formoterolo", defaultPosology: "12mcg x 2/die", defaultDuration: "continuativa" },
+  { id: '13', name: "Omalizumab", defaultPosology: "300mg/mese SC", defaultDuration: "6 mesi" },
+  { id: '14', name: "Dupilumab", defaultPosology: "300mg/15gg SC", defaultDuration: "continuativa" },
+  { id: '15', name: "Adrenalina autoiniettore", defaultPosology: "al bisogno", defaultDuration: "---" },
+  { id: '16', name: "Sirolimus", defaultPosology: "2mg/die", defaultDuration: "continuativa" },
+  { id: '17', name: "Bortezomib", defaultPosology: "secondo schema", defaultDuration: "ciclo" },
+  { id: '18', name: "Desametasone", defaultPosology: "4mg/die", defaultDuration: "10 giorni" },
+  { id: '19', name: "Zanubrutinib", defaultPosology: "160mg x 2/die", defaultDuration: "continuativa" }
 ];
 
 export const INITIAL_SCHEDULE: WorkingDay[] = [
@@ -154,7 +187,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   customFields: [],
   schedule: INITIAL_SCHEDULE,
   clinics: [{ id: '1', name: 'Studio Principale', address: '', color: '#0d9488' }],
-  knownDiagnoses: [],
+  knownDiagnoses: PREDEFINED_DIAGNOSES,
   priceList: [],
   clinicDetails: { name: '', address: '', piva: '', phone: '', email: '' }
 };
